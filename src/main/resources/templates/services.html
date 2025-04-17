@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Navigation</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header id="top">
+		<nav>
+			<ul>
+				<li><a href="/home">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/cars">Cars</a></li>
+				<li><a href="/services">Services</a></li>
+				<li><a href="/contacts">Contacts</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- header end -->
+	<!-- logo start -->
+	<div class="logo">
+
+		<a href="/home"> <img
+			src="images/Taxi-Logo-Background-PNG-Image.png" alt="">
+		</a>
+
+	</div>
+	<!-- logo end  -->
+
+	<!-- SERVICES STARTED -->
+
+	<section class="taxi-services">
+		<div class="row">
+			<div class="service-card">
+				<img src="images/page4_img1.jpg" alt="Service 1">
+				<div class="service-info">
+					<h3>City Rides</h3>
+					<p>Fast and comfortable rides within the city.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/img4.jpg" alt="Service 2">
+				<div class="service-info">
+					<h3>Airport Transfers</h3>
+					<p>Reliable drop and pickup to/from the airport.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/page4_img2.jpg" alt="Service 3">
+				<div class="service-info">
+					<h3>Luxury Rides</h3>
+					<p>Premium rides for special occasions.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="service-card">
+				<img src="images/page4_img7.jpg" alt="Service 4">
+				<div class="service-info">
+					<h3>Outstation Trips</h3>
+					<p>Book long-distance rides for comfort and safety.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/img2.jpg" alt="Service 5">
+				<div class="service-info">
+					<h3>Car Rentals</h3>
+					<p>Rent a car with a driver for your needs.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/img3.jpg" alt="Service 6">
+				<div class="service-info">
+					<h3>Ride Sharing</h3>
+					<p>Affordable shared rides with other passengers.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="service-card">
+				<img src="images/img5.jpg" alt="Service 7">
+				<div class="service-info">
+					<h3>Corporate Rides</h3>
+					<p>Business-class rides for professionals.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/img6.jpg" alt="Service 8">
+				<div class="service-info">
+					<h3>Subscription Plans</h3>
+					<p>Monthly plans for frequent travelers.</p>
+				</div>
+			</div>
+			<div class="service-card">
+				<img src="images/img7.jpg" alt="Service 9">
+				<div class="service-info">
+					<h3>Bike Taxi</h3>
+					<p>Quick and cheap rides on two-wheelers.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SERVICES ENDED -->
+	<!-- footer started  -->
+	<div th:insert="~{fragments/footer.html}"></div>
+	<!-- footer ended  -->
+	
+	
+	<!-- Add Font Awesome CDN for the icon -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+</body>
+</html>

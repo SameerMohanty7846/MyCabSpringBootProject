@@ -1,0 +1,1142 @@
+html,
+body {
+    background-color: #f9f9f9;
+    /* Light gray background for the page */
+    color: #333;
+    /* Dark text for readability */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* header start */
+header {
+    height: 80px;
+    /* Adjusted height for a more balanced look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #111, #e74c3c);
+    /* Gradient background for the header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    border-bottom: 3px solid #e74c3c;
+    /* Red border at the bottom */
+    position: relative;
+    z-index: 100;
+    /* Ensures the header stays on top */
+}
+
+nav {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 0 20px;
+    /* Balanced spacing between menu items */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    /* White text for the links */
+    font-size: 18px;
+    font-weight: 500;
+    /* Slightly bold text */
+    padding: 14px 20px;
+    /* Adjusted padding */
+    display: block;
+    /* Ensures the entire area is clickable */
+    border-radius: 50px;
+    /* Pill-shaped buttons */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+}
+
+a:hover {
+    color: #e74c3c;
+    /* Red color on hover */
+    transform: scale(1.1);
+    /* Slight scale effect for hover */
+}
+
+/* ---------------LOGO CSS START--------- */
+.logo {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    height: 200px;
+    width: 200px;
+    margin: auto; /* Centers it within its parent div */
+}
+  
+.logo a img {
+    max-width: 100%;
+    /* Ensures the image doesn't overflow the container */
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+    /* Ensures the image maintains its aspect ratio */
+}
+
+/* ---------------LOGO CSS END--------- */
+/* corosel start */
+#carouselExample {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    /* Reduced max height for the carousel */
+    overflow: hidden;
+    /* Ensures images are cropped to fit the container */
+}
+
+/* Adjust the width and height of images */
+.carousel-inner img {
+    object-fit: cover;
+    /* Ensures images cover the container */
+    height: 100%;
+    /* Makes the images take the full height of the container */
+    width: 80%;
+    /* Reduced width for images */
+    margin: 0 auto;
+    /* Centers the images horizontally */
+}
+
+/* Simplified styles for the control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    background: none;
+    /* No background for a simple look */
+    border: none;
+    color: white;
+    font-size: 2rem;
+    /* Larger font size for the buttons */
+    padding: 10px;
+    opacity: 0.7;
+    /* Slight transparency */
+    transition: opacity 0.3s ease;
+    /* Smooth transition */
+    font-weight: bold;
+}
+
+/* Button symbols (< and >) */
+.carousel-control-prev span,
+.carousel-control-next span {
+    font-size: 2rem;
+    /* Bigger text size for the buttons */
+    color: white;
+}
+
+/* On hover: make the buttons fully opaque */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Adjust the carousel caption if any */
+.carousel-caption {
+    color: #fff;
+    font-size: 1.5rem;
+}
+.box:hover {
+    background: linear-gradient(45deg, #fb0000, #ff6666, #ff8080);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Text color change on hover */
+.box:hover .box-text {
+    color: white
+}
+
+/* corosel end  */
+/* <!-- Banner css  start --> */
+/* Container for the boxes */
+.container {
+    display: flex;
+    /* Aligns the child divs horizontally */
+    justify-content: center;
+    /* Centers the boxes horizontally */
+    gap: 30px;
+    /* Adds space between the boxes */
+    margin-top: 40px;
+    /* Adds some margin at the top */
+    padding: 0 50px;
+    /* Adds extra margin on the left and right sides of the container */
+}
+
+/* Style for each box */
+.box {
+    width: 350px;
+    /* Increased width for a more rectangular look */
+    height: 350px;
+    /* Keeps the height consistent */
+    border: 1px solid #ccc;
+    /* Optional: Adds a border for each box */
+    display: flex;
+    flex-direction: column;
+    /* Aligns children (image and text) vertically */
+    padding: 20px;
+    /* Added padding inside the box */
+    box-sizing: border-box;
+    /* Ensures padding is included in the width */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    margin-bottom: 20px;
+    /* Adds bottom margin to each box */
+    border-radius: 10px;
+    /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow effect */
+}
+
+/* Style for the image container */
+.box-image {
+    flex-grow: 1;
+    /* Ensures the image container takes up available space */
+    display: flex;
+    justify-content: center;
+    /* Centers the image horizontally */
+    align-items: center;
+    /* Centers the image vertically */
+    margin-bottom: 10px;
+    /* Adds space between image and text */
+}
+
+/* Style for the images */
+.box-image img {
+    max-width: 100%;
+    /* Ensures the image doesn't overflow */
+    height: auto;
+    /* Keeps the aspect ratio */
+    border-radius: 5px;
+    /* Rounded corners for the image */
+}
+
+/* Style for the text container */
+.box-text {
+    flex-grow: 1;
+    /* Ensures the text container takes up available space */
+    display: flex;
+    justify-content: center;
+    /* Centers the text horizontally */
+    align-items: flex-start;
+    /* Aligns the text to the top of the container */
+    padding-top: 10px;
+    /* Adds some space between the image and text */
+}
+
+/* Style for the text */
+.box-text p {
+    font-size: 14px;
+    /* Adjusted text size */
+    margin: 0;
+    /* Removes default margin */
+    color: #333;
+    /* Text color */
+    line-height: 1.6;
+    /* Makes the text more readable */
+}
+
+/* Hover effect for each box */
+.box:hover {
+    background-color: #f7f7f7;
+    /* Light grey background on hover */
+    transform: scale(1.05);
+    /* Slight scale effect on hover */
+}
+
+/* <!-- Banner css  end --> */
+/* <!-- booking banner css  start  --> */
+/* Banner Style */
+.banner {
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(135deg, #111, #e74c3c);
+    /* Same gradient as header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    /* Softer, more noticeable shadow */
+    border-bottom: 4px solid #e74c3c;
+    /* Thicker red border at the bottom for emphasis */
+    margin: 20px 0;
+    /* Adds spacing above and below */
+}
+
+/* Content inside the banner */
+.banner-content {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', Arial, sans-serif;
+    /* Clean and modern font */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Phone number style */
+.phone-number {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.phone-number span {
+    color: #f39c12;
+    /* Yellow color for the phone number to make it stand out */
+}
+
+/* CTA Button styling */
+.cta button {
+    padding: 18px 35px;
+    background-color: #e74c3c;
+    /* Red background */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Adding subtle shadow to the button */
+}
+
+/* Button Hover Effect */
+.cta button:hover {
+    background-color: #c0392b;
+    /* Darker red on hover */
+    transform: scale(1.1);
+    /* Slight enlargement effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Increase shadow on hover for emphasis */
+}
+
+/* Animation for glowing effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+    }
+
+    50% {
+        box-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+    }
+
+    100% {
+        box-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red;
+    }
+}
+
+/* Adding a glowing effect to the phone number */
+.phone-number {
+    animation: glow 1.5s infinite;
+}
+
+/* Extra small screen (mobile) adjustments */
+@media (max-width: 768px) {
+    .banner {
+        height: 250px;
+        /* Reduce height for mobile view */
+    }
+
+    .phone-number {
+        font-size: 20px;
+        /* Slightly smaller font size */
+    }
+
+    .cta button {
+        padding: 14px 28px;
+        /* Slightly smaller button on mobile */
+    }
+}
+
+/* <!-- booking banner css  end  --> */
+
+/* <!-- booking form css started -->
+/* Main container for both the form and images */
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: linear-gradient(135deg, #2c3e50, #e74c3c); /* Dark and Red gradient background */
+    font-family: 'Arial', sans-serif;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 1200px; /* Center the content */
+    border-radius: 8px;
+}
+
+/* Booking Form Section */
+.booking-form-container {
+    background-color: rgba(44, 62, 80, 0.9); /* Dark background with some transparency */
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    color: #ecf0f1; /* Light color text for contrast */
+}
+
+.booking-form-container h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+/* Form Row and Form Group */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ecf0f1; /* Light color text for labels */
+    display: block;
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #e74c3c; /* Red border to match theme */
+    border-radius: 8px;
+    font-size: 12px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+/* Radio buttons for comfort selection */
+.radio-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 4px;
+}
+
+.radio-group label {
+    font-size: 10px;
+    color: #ecf0f1;
+}
+
+/* Submit Button */
+.form-submit .btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    width: 70%;
+    margin-top: 12px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Image Section */
+.image-container {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-container .slide {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image-container .slide:hover {
+    transform: scale(1.05);
+}
+
+.image-container .slide img {
+    width: 100%;
+    height: 160px; /* Further reduced height */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container .caption {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .booking-form-container,
+    .image-container {
+        width: 100%;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-submit .btn {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+
+    .image-container .caption {
+        font-size: 10px;
+    }
+}
+.form-submit .btn:hover {
+    background-color: #e74c3c; /* Keeps the red color on hover */
+    color: white; /* Keeps text color unchanged */
+    opacity: 1; /* Ensures no transparency change */
+    transform: none !important; /* Prevents size increase */
+    transition: background-color 0.3s ease; /* Keeps smooth color transition */
+}
+
+
+/* <!-- booking form css  ended -->  */
+
+/* footer css started  */
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px; /* Adds space above the footer */
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    /* Adjust to shift social links a bit to the left */
+    margin-left: -20px; /* This will shift the social links slightly left */
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b); /* Stylish gradient */
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px; /* Smaller padding */
+    font-size: 12px; /* Smaller font size */
+    border-radius: 25px; /* Slightly smaller border radius */
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center; /* Align icon and text */
+    gap: 5px; /* Space between icon and text */
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226); /* Darker on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+.back-to-top i {
+    font-size: 16px; /* Icon size */
+}
+/* Back to Top Button ENDED */
+
+/* footer css ended  */
+
+
+
+/* <!-- ABOUT US CSS CONTENT STARTED --> */
+.about-us {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure both sections have the same height */
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Left Section - Divided into 4 Grid Boxes */
+.about-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Adjusted height for both divs */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.image-box {
+    grid-column: span 2;
+    text-align: center;
+    height: 250px; /* Fixed height for image box */
+    width: 250px; /* Fixed width for image box to maintain a square shape */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Added shadow for better appearance */
+    margin: 0 auto; /* Center the image */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the square container */
+    border-radius: 10px;
+}
+
+/* Text Boxes */
+.text-box {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    flex: 1;
+}
+
+/* Right Section - Why Choose Us */
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Adjusted height for both divs */
+}
+
+.about-right h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.why-choose {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reason {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px; /* Increased padding for better spacing */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+    background: #f4a261;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.text h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .reason {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* <!-- ABOUT US CSS CONTENT ENDED --> */
+
+
+/* Testimonial CSS started */
+
+.testimonials {
+    text-align: center;
+    background-color: black;
+    padding: 50px 20px;
+    margin-top: 50px;
+}
+
+.testimonials h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    width: 30%;
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid red;
+    margin-bottom: 10px;
+}
+
+.customer-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.testimonial-content {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.rating {
+    color: gold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+/* Testimonial CSS ended */
+
+
+/* CARS CSS STARTED */
+
+.gallery {
+    text-align: center;
+    background-color: black;
+    padding: 50px 0;
+    color: white;
+}
+
+h2 {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gallery-item img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.next, .prev {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.next:hover, .prev:hover {
+    background: red;
+}
+
+
+/* CARS CSS ENDED */
+
+/* SERVICES CSS STARTED */
+.taxi-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.service-card {
+    background: #111;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    width: 30%;
+}
+
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.service-info {
+    padding: 15px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #e50914;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* SERVICES CSS ENDED */
+
+
+
+/* MAP STARTED */
+.find-us {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.find-us h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d00000;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container figure {
+    width: 95%; /* Increased width */
+    max-width: 1200px;  /* Adjusted for a wider map */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 550px; /* Slightly increased height */
+    border: none;
+}
+
+/* MAP ENDED */
+
+
+/* CONTACT FORM CSS STARTED */
+
+.contact-section {
+    background: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    display: flex;
+    gap: 20px;
+    background: linear-gradient(135deg, #2c3e50, #e74c3c);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background: rgba(44, 62, 80, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: scale(1.02);
+}
+
+.contact-form h3 {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Form Inputs */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+}
+
+/* Error Message */
+.error-message {
+    font-size: 12px;
+    color: #e74c3c;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Submit Button */
+.contact-form button {
+    width: 100%;
+    background: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #c0392b;
+}
+
+
+/* CONTACT FORM CSS ENDED */

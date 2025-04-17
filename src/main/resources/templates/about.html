@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Navigation</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header id="top">
+		<nav>
+			<ul>
+				<li><a href="/home">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/cars">Cars</a></li>
+				<li><a href="/services">Services</a></li>
+				<li><a href="/contacts">Contacts</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- header end -->
+	<!-- logo start -->
+	<div class="logo">
+
+		<a href="/home"> <img
+			src="images/Taxi-Logo-Background-PNG-Image.png" alt="">
+		</a>
+
+	</div>
+	<!-- logo end  -->
+	<!-- ABOUT US CONTENT STARTED -->
+	<section class="about-us">
+		<div class="about-container">
+			<!-- Left Section -->
+			<div class="about-left">
+				<div class="about-grid">
+					<div class="grid-item image-box">
+						<img src="images/page4_img5.jpg" alt="Taxi Driver">
+					</div>
+					<div class="grid-item text-box">
+						<h2>A Few Words About Us</h2>
+						<p>We provide top-notch taxi services across India, ensuring
+							comfort and safety for every ride.</p>
+					</div>
+					<div class="grid-item text-box">
+						<p>Our drivers are well-trained and punctual, giving you a
+							seamless travel experience every time.</p>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Right Section -->
+			<div class="about-right">
+				<h2>Why Choose Us</h2>
+				<div class="why-choose">
+					<div class="reason">
+						<div class="number">1</div>
+						<div class="text">
+							<h3>Reliable & Safe</h3>
+							<p>Our taxis are well-maintained, and safety is our priority
+								for every passenger.</p>
+						</div>
+					</div>
+					<div class="reason">
+						<div class="number">2</div>
+						<div class="text">
+							<h3>Affordable Pricing</h3>
+							<p>We offer competitive fares without any hidden charges,
+								making travel cost-effective.</p>
+						</div>
+					</div>
+					<div class="reason">
+						<div class="number">3</div>
+						<div class="text">
+							<h3>24/7 Service</h3>
+							<p>No matter when you need a ride, our taxis are available
+								round the clock for you.</p>
+						</div>
+					</div>
+					<div class="reason">
+						<div class="number">4</div>
+						<div class="text">
+							<h3>Experienced Drivers</h3>
+							<p>Our drivers know the best routes to get you to your
+								destination on time.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ABOUT US CONTENT ENDED -->
+
+	<!-- Testimonial started -->
+	<section class="testimonials">
+		<h2>What Our Customers Say</h2>
+		<div class="testimonial-container">
+
+			<div class="testimonial-card">
+				<img src="images/Person1.jpg" alt="Customer 1">
+				<h4 class="customer-name">Rahul Sharma</h4>
+				<div class="testimonial-content">
+					<div class="rating">★★★★★</div>
+					<p class="testimonial-text">I had an amazing experience using
+						this taxi service. The driver was courteous, the car was clean,
+						and the entire process was seamless. Booking was easy, and I
+						received real-time updates about my ride. Highly recommend it!</p>
+				</div>
+			</div>
+
+			<div class="testimonial-card">
+				<img src="images/Person2.jpg" alt="Customer 2">
+				<h4 class="customer-name">Arjun Kapoor</h4>
+				<div class="testimonial-content">
+					<div class="rating">★★★★★</div>
+					<p class="testimonial-text">This taxi service never
+						disappoints! I travel frequently, and I always rely on them for
+						timely pickups and professional drivers. The fares are reasonable,
+						and I appreciate the security measures they have in place. A truly
+						stress-free experience.</p>
+				</div>
+			</div>
+
+			<div class="testimonial-card">
+				<img src="images/Person3.jpg" alt="Customer 3">
+				<h4 class="customer-name">Ankit Verma</h4>
+				<div class="testimonial-content">
+					<div class="rating">★★★★★</div>
+					<p class="testimonial-text">Exceptional service! From the ease
+						of booking to the comfortable ride, everything was great. The
+						customer support team was responsive when I had questions. I
+						highly recommend this to anyone looking for a reliable taxi
+						service.</p>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+	<!-- Testimonial Ended -->
+
+
+
+	<!-- footer started  -->
+	<div th:insert="~{fragments/footer.html}"></div>
+	<!-- footer ended  -->
+	<!-- Add Font Awesome CDN for the icon -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+</body>
+
+</html>

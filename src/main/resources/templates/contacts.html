@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Navigation</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header id="top">
+		<nav>
+			<ul>
+				<li><a href="/home">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/cars">Cars</a></li>
+				<li><a href="/services">Services</a></li>
+				<li><a href="/contacts">Contacts</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- header end -->
+	<!-- logo start -->
+	<div class="logo">
+
+		<a href="/home"> <img
+			src="images/Taxi-Logo-Background-PNG-Image.png" alt="">
+		</a>
+
+	</div>
+	<!-- logo end  -->
+	<!-- MAP STARTED -->
+	<section class="find-us">
+		<h3>Find Us</h3>
+		<div class="map-container">
+			<figure>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2881506861904!2d84.7831444742581!3d19.313298644481947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d51ff389a6f2b%3A0xa7b7b97f703bcb5d!2sRamlingeswar%20Water%20Park!5e0!3m2!1sen!2sin!4v1739168414433!5m2!1sen!2sin"
+					style="border: 0"></iframe>
+			</figure>
+		</div>
+	</section>
+
+	<!-- MAP ENDED -->
+
+	<!-- CONTACT FROM STARTD -->
+
+
+	<section class="contact-section">
+		<div class="contact-container">
+			<!-- Contact Info -->
+			<div class="contact-info">
+				<h3>Contact Us</h3>
+				<p>📍 Gandhi Nagar, Berhampur,</p>
+				<p>📧 contact@mycab.com</p>
+				<p>📞 +91 98765 43210</p>
+			</div>
+
+			<!-- Contact Form -->
+			<div class="contact-form">
+				<h3>Send Us a Message</h3>
+				<form>
+					<input type="text" placeholder="Enter Name" required> <span
+						class="error-message" id="errorName"></span> <input type="tel"
+						placeholder="Enter Phone" required> <span
+						class="error-message" id="errorPhone"></span> <input type="email"
+						placeholder="Enter Email" required> <span
+						class="error-message" id="errorEmail"></span>
+
+					<textarea placeholder="Enter Message" required></textarea>
+					<span class="error-message" id="errorMessage"></span>
+
+					<button type="submit">Send</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- CONTACT FROM ENDED -->
+	<!-- footer started  -->
+	<div th:insert="~{fragments/footer.html}"></div>
+	<!-- footer ended  -->
+	<!-- Add Font Awesome CDN for the icon -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Navigation</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<!-- header start -->
+	<div th:insert="~{fragments/header.html}"></div>
+	<!-- header end -->
+
+	<!-- logo start -->
+	<div class="logo">
+
+		<a href="/home"> <img
+			src="images/Taxi-Logo-Background-PNG-Image.png" alt="">
+		</a>
+
+	</div>
+	<!-- logo end  -->
+	<!-- Carousel start -->
+
+	<div id="carouselExample" class="carousel slide"
+		data-bs-ride="carousel" data-bs-interval="3000">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/car3.jpg" class="d-block w-100" alt="Slide 1">
+			</div>
+			<div class="carousel-item">
+				<img src="images/slide3.jpg" class="d-block w-100" alt="Slide 2">
+			</div>
+			<div class="carousel-item">
+				<img src="images/car5.jpg" class="d-block w-100" alt="Slide 3">
+			</div>
+		</div>
+
+		<!-- Previous Button (<) -->
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#carouselExample" data-bs-slide="prev">
+			<span class="visually-hidden">Previous</span> <span>&lt;</span>
+			<!-- < symbol for previous button -->
+		</button>
+
+		<!-- Next Button (>) -->
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#carouselExample" data-bs-slide="next">
+			<span class="visually-hidden">Next</span> <span>&gt;</span>
+			<!-- > symbol for next button -->
+		</button>
+	</div>
+	<!-- Carousel end -->
+	<!-- Banners start -->
+	<div class="container">
+		<div class="box">
+			<div class="box-image">
+				<img src="images/slide.jpg" alt="Slide 1">
+			</div>
+			<div class="box-text">
+				<p>We offer quick, safe, and affordable rides wherever you need
+					to go. Our drivers are reliable, and our cars are clean and
+					well-maintained. Book your ride now for a hassle-free journey</p>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-image">
+				<img src="images/slide2.jpg" alt="Slide 2">
+			</div>
+			<div class="box-text">
+				<p>We offer quick, safe, and affordable rides wherever you need
+					to go. Our drivers are reliable, and our cars are clean and
+					well-maintained. Book your ride now for a hassle-free journey</p>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-image">
+				<img src="images/slide3.jpg" alt="Slide 3">
+			</div>
+			<div class="box-text">
+				<p>We offer quick, safe, and affordable rides wherever you need
+					to go. Our drivers are reliable, and our cars are clean and
+					well-maintained. Book your ride now for a hassle-free journey</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banners end -->
+	<!-- booking banner start  -->
+	<div class="banner">
+		<div class="banner-content">
+			<div class="phone-number">
+				<p>
+					📞 Call us now: <span>+91 123 456 7890</span>
+				</p>
+			</div>
+			<div class="cta">
+				<a href="#booknow"><button>Book Now</button></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- booking banner end  -->
+
+	<!-- booking form  started -->
+	<div class="booking-container" id="booknow">
+		<!-- First div containing the booking form -->
+		<div class="booking-form-container">
+			<h3>Booking Form</h3>
+			<form id="bookingForm">
+				<!-- Name and From -->
+				<div class="form-row">
+					<div class="form-group">
+						<label for="Name">Name</label> <input name="Name" id="Name"
+							placeholder="Enter your name" type="text"
+							data-constraints='@NotEmpty @Required @AlphaSpecial'>
+						<div class="error-message" id="errorName"></div>
+						<!-- Space for error message -->
+					</div>
+					<div class="form-group">
+						<label for="From">From</label> <input name="From" id="From"
+							placeholder="Enter departure location" type="text"
+							data-constraints="@NotEmpty @Required">
+						<div class="error-message" id="errorFrom"></div>
+						<!-- Space for error message -->
+					</div>
+				</div>
+
+				<!-- Email and To -->
+				<div class="form-row">
+					<div class="form-group">
+						<label for="Email">Email</label> <input name="Email" id="Email"
+							placeholder="Enter your email" type="text"
+							data-constraints="@NotEmpty @Required @Email">
+						<div class="error-message" id="errorEmail"></div>
+						<!-- Space for error message -->
+					</div>
+					<div class="form-group">
+						<label for="To">To</label> <input name="To" id="To"
+							placeholder="Enter destination" type="text"
+							data-constraints="@NotEmpty @Required">
+						<div class="error-message" id="errorTo"></div>
+						<!-- Space for error message -->
+					</div>
+				</div>
+
+				<!-- Time -->
+				<div class="form-group">
+					<label for="Time">Time</label> <input name="Time" id="Time"
+						placeholder="Enter travel time" type="text"
+						data-constraints="@NotEmpty @Required">
+					<div class="error-message" id="errorTime"></div>
+					<!-- Space for error message -->
+				</div>
+
+				<!-- Date -->
+				<div class="form-group">
+					<label for="Date">Date</label> <input type="text" name="Date"
+						id="Date" placeholder="20/05/2014"
+						data-constraints="@NotEmpty @Required @Date">
+					<div class="error-message" id="errorDate"></div>
+					<!-- Space for error message -->
+				</div>
+
+				<!-- Comfort -->
+				<div class="form-group">
+					<label>Comfort</label>
+					<div class="radio-group">
+						<input name="Comfort" type="radio" id="Comfort1" checked /> <label
+							for="Comfort1">Cheap</label> <input name="Comfort" type="radio"
+							id="Comfort2" /> <label for="Comfort2">Standard</label> <input
+							name="Comfort" type="radio" id="Comfort3" /> <label
+							for="Comfort3">Lux</label>
+					</div>
+					<div class="error-message" id="errorComfort"></div>
+					<!-- Space for error message -->
+				</div>
+
+				<!-- Adults and Children -->
+				<div class="form-row">
+					<div class="form-group">
+						<label for="Adults">Adults</label> <select name="Adults"
+							id="Adults">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+						<div class="error-message" id="errorAdults"></div>
+						<!-- Space for error message -->
+					</div>
+					<div class="form-group">
+						<label for="Children">Children</label> <select name="Children"
+							id="Children">
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+						</select>
+						<div class="error-message" id="errorChildren"></div>
+						<!-- Space for error message -->
+					</div>
+				</div>
+
+				<!-- Message -->
+				<div class="form-group">
+					<label for="Message">Message</label>
+					<textarea name="Message" id="Message" placeholder="Your message"
+						data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
+					<div class="error-message" id="errorMessage"></div>
+					<!-- Space for error message -->
+				</div>
+
+				<!-- Submit Button -->
+				<div class="form-submit">
+					<a href="#" class="btn" data-type="submit">Submit</a>
+				</div>
+			</form>
+		</div>
+
+		<!-- Second div containing the images -->
+		<div class="image-container">
+			<a href="index2.html" class="slide"> <img src="images/big2.jpg"
+				alt="Economy"> <span class="caption">Economy</span>
+			</a> <a href="index2.html" class="slide"> <img src="images/big6.jpg"
+				alt="Standard"> <span class="caption">Standard</span>
+			</a> <a href="index2.html" class="slide"> <img src="images/big7.jpg"
+				alt="Lux"> <span class="caption">Lux</span>
+			</a>
+		</div>
+	</div>
+
+	<!-- booking form  ended -->
+
+	<!-- footer started  -->
+	<div th:insert="~{fragments/footer.html}"></div>
+	<!-- footer ended  -->
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Add Font Awesome CDN for the icon -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
