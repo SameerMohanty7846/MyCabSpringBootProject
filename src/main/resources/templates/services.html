@@ -9,18 +9,11 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<header id="top">
-		<nav>
-			<ul>
-				<li><a href="/home">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/cars">Cars</a></li>
-				<li><a href="/services">Services</a></li>
-				<li><a href="/contacts">Contacts</a></li>
-			</ul>
-		</nav>
-	</header>
+	<!-- header start -->
+	<div th:insert="~{fragments/header.html}"></div>
 	<!-- header end -->
+	
+	
 	<!-- logo start -->
 	<div class="logo">
 
@@ -109,8 +102,8 @@
 	<!-- footer started  -->
 	<div th:insert="~{fragments/footer.html}"></div>
 	<!-- footer ended  -->
-	
-	
+
+
 	<!-- Add Font Awesome CDN for the icon -->
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
