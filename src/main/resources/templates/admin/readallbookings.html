@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - All Bookings</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ffe6e6, #fff5f5);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d63031;
+            margin-bottom: 30px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        .message {
+            background-color: #ffe0e0;
+            border-left: 6px solid #d63031;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #b71c1c;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #d63031;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table td {
+            background-color: #fff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #ffeaea;
+        }
+
+        .btn {
+            background-color: #d63031;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .table-container {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Admin Dashboard - All Bookings</h1>
+
+<span th:text="${message}"
+		style="display: block; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: 600; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);"></span>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Comfort</th>
+                    <th>Adult</th>
+                    <th>Children</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="booking : ${allbookings}">
+                    <td th:text="${booking.name}"></td>
+                    <td th:text="${booking.source}"></td>
+                    <td th:text="${booking.destination}"></td>
+                    <td th:text="${booking.phone}"></td>
+                    <td th:text="${booking.date}"></td>
+                    <td th:text="${booking.time}"></td>
+                    <td th:text="${booking.comfort}"></td>
+                    <td th:text="${booking.adult}"></td>
+                    <td th:text="${booking.children}"></td>
+                    <td th:text="${booking.message}"></td>
+                    <td>
+                        <a th:href="@{'/admin/deleteBooking/' + ${booking.id}}" class="btn delete-btn">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/admin/dashboard" class="btn">DASHBOARD</a>
+    </div>
+</div>
+
+</body>
+</html>

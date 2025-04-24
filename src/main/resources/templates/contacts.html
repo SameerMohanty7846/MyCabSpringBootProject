@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Styled Navigation</title>
+<title>Contacts</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
 	<!-- header start -->
 	<div th:insert="~{fragments/header.html}"></div>
 	<!-- header end -->
-	
+
 	<!-- logo start -->
 	<div class="logo">
 
@@ -37,9 +37,7 @@
 	</section>
 
 	<!-- MAP ENDED -->
-
 	<!-- CONTACT FROM STARTD -->
-
 
 	<section class="contact-section">
 		<div class="contact-container">
@@ -54,26 +52,39 @@
 			<!-- Contact Form -->
 			<div class="contact-form">
 				<h3>Send Us a Message</h3>
-				<form>
-					<input type="text" placeholder="Enter Name" required> <span
-						class="error-message" id="errorName"></span> <input type="tel"
-						placeholder="Enter Phone" required> <span
-						class="error-message" id="errorPhone"></span> <input type="email"
-						placeholder="Enter Email" required> <span
-						class="error-message" id="errorEmail"></span>
+				<h3 th:text="${message}"style="color: green; font-size: 18px; 
+				font-weight: bold; text-align: center; padding: 8px;">
+				</h3>
+				
+				<form method="post" th:action="@{contactform}"
+					th:object="${contactForm}">
+					<input type="text" placeholder="Enter Name" th:value="${contactForm.name}" name="name">
+					<span class="error-message" id="errorName" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></span> 
+						
+					<input type="tel" placeholder="Enter Phone" th:value="${contactForm.phone}" name="phone">
+					<span class="error-message" id="errorPhone" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+					
+					 <input type="text" placeholder="Enter Email" th:value="${contactForm.email}" name="email"> 
+					 <span class="error-message"id="errorEmail" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
 
-					<textarea placeholder="Enter Message" required></textarea>
-					<span class="error-message" id="errorMessage"></span>
+					<textarea placeholder="Enter Message" th:text="${contactForm.message}" name="message" ></textarea>
+					<span class="error-message" id="errorMessage" th:if="${#fields.hasErrors('message')}" th:errors="*{message}" ></span>
 
-					<button type="submit">Send</button>
+					<!-- Send and Clear buttons -->
+					<div style="display: flex; gap: 10px;">
+						<button type="submit">Send</button>
+						<button type="reset">Clear</button>
+					</div>
 				</form>
 			</div>
 		</div>
 	</section>
 
-
-
 	<!-- CONTACT FROM ENDED -->
+
+
+
+
 	<!-- footer started  -->
 	<div th:insert="~{fragments/footer.html}"></div>
 	<!-- footer ended  -->

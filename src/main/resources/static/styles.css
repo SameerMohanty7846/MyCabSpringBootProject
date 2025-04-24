@@ -1096,7 +1096,8 @@ h2 {
 }
 
 /* Form Inputs */
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 5px;
@@ -1108,7 +1109,8 @@ h2 {
     transition: 0.3s;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: #e74c3c;
     box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
 }
@@ -1121,7 +1123,12 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Submit Button */
+/* Submit and Clear Buttons */
+.contact-form form > div {
+    display: flex;
+    gap: 10px;
+}
+
 .contact-form button {
     width: 100%;
     background: #e74c3c;
@@ -1137,6 +1144,5 @@ h2 {
 .contact-form button:hover {
     background: #c0392b;
 }
-
 
 /* CONTACT FORM CSS ENDED */

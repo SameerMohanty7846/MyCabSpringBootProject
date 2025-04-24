@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Styled Navigation</title>
+<title>Home</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <link
@@ -115,58 +115,77 @@
 		<!-- First div containing the booking form -->
 		<div class="booking-form-container">
 			<h3>Booking Form</h3>
-			<form id="bookingForm">
+			<h3 th:text="${message}"
+				style="color: green; font-size: 18px; font-weight: bold; text-align: center; padding: 8px;">
+			</h3>
+
+
+			<form id="bookingForm" th:action="@{bookingform}"
+				th:object="${bookingForm}" method="post">
 				<!-- Name and From -->
 				<div class="form-row">
 					<div class="form-group">
-						<label for="Name">Name</label> <input name="Name" id="Name"
+						<label for="Name">Name</label> <input name="name" id="name"
 							placeholder="Enter your name" type="text"
+							th:value="${bookingForm.name} "
 							data-constraints='@NotEmpty @Required @AlphaSpecial'>
-						<div class="error-message" id="errorName"></div>
+						<div class="error-message" id="errorName"
+							th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 						<!-- Space for error message -->
 					</div>
 					<div class="form-group">
-						<label for="From">From</label> <input name="From" id="From"
+						<label for="From">From</label> <input name="source" id="From"
 							placeholder="Enter departure location" type="text"
+							th:value="${bookingForm.source} "
 							data-constraints="@NotEmpty @Required">
-						<div class="error-message" id="errorFrom"></div>
+						<div class="error-message" id="errorFrom"
+							th:if="${#fields.hasErrors('source')}" th:errors="*{source}"></div>
 						<!-- Space for error message -->
 					</div>
 				</div>
 
-				<!-- Email and To -->
+				<!-- Phone and To -->
 				<div class="form-row">
 					<div class="form-group">
-						<label for="Email">Email</label> <input name="Email" id="Email"
-							placeholder="Enter your email" type="text"
-							data-constraints="@NotEmpty @Required @Email">
-						<div class="error-message" id="errorEmail"></div>
+						<label for="Phone">Phone</label> <input name="phone" id="Phone"
+							placeholder="Enter your phone number" type="number"
+							th:value="${bookingForm.phone} "
+							data-constraints="@NotEmpty @Required @Phone">
+						<div class="error-message" id="errorPhone"
+							th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
 						<!-- Space for error message -->
 					</div>
 					<div class="form-group">
-						<label for="To">To</label> <input name="To" id="To"
+						<label for="To">To</label> <input name="destination" id="To"
 							placeholder="Enter destination" type="text"
+							th:value="${bookingForm.destination} "
 							data-constraints="@NotEmpty @Required">
-						<div class="error-message" id="errorTo"></div>
+						<div class="error-message" id="errorTo"
+							th:if="${#fields.hasErrors('destination')}"
+							th:errors="*{destination}"></div>
 						<!-- Space for error message -->
 					</div>
 				</div>
 
 				<!-- Time -->
 				<div class="form-group">
-					<label for="Time">Time</label> <input name="Time" id="Time"
-						placeholder="Enter travel time" type="text"
+					<label for="Time">Time</label> <input name="time" id="Time"
+						placeholder="Enter travel time" type="time"
+						th:value="${bookingForm.time} "
 						data-constraints="@NotEmpty @Required">
-					<div class="error-message" id="errorTime"></div>
+					<div class="error-message" id="errorTime"
+						th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></div>
 					<!-- Space for error message -->
 				</div>
 
 				<!-- Date -->
 				<div class="form-group">
-					<label for="Date">Date</label> <input type="text" name="Date"
-						id="Date" placeholder="20/05/2014"
+					<label for="Date">Date</label> <input type="date"
+						th:value="${bookingForm.date} " name="date" id="Date"
+						placeholder="20/05/2014"
 						data-constraints="@NotEmpty @Required @Date">
-					<div class="error-message" id="errorDate"></div>
+					<div class="error-message" id="errorDate"
+						th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
 					<!-- Space for error message -->
 				</div>
 
@@ -174,53 +193,65 @@
 				<div class="form-group">
 					<label>Comfort</label>
 					<div class="radio-group">
-						<input name="Comfort" type="radio" id="Comfort1" checked /> <label
-							for="Comfort1">Cheap</label> <input name="Comfort" type="radio"
+						<input name="comfort" value="cheap"
+							th:checked="${bookingForm.comfort=='cheap'}" type="radio"
+							id="Comfort1" /> <label for="Comfort1">Cheap</label> <input
+							name="comfort" value="standard"
+							th:checked="${bookingForm.comfort=='standard'}" type="radio"
 							id="Comfort2" /> <label for="Comfort2">Standard</label> <input
-							name="Comfort" type="radio" id="Comfort3" /> <label
-							for="Comfort3">Lux</label>
+							name="comfort" value="lux"
+							th:checked="${bookingForm.comfort=='lux'}" type="radio"
+							id="Comfort3" /> <label for="Comfort3">Lux</label>
 					</div>
-					<div class="error-message" id="errorComfort"></div>
-					<!-- Space for error message -->
+					<div class="error-message" id="errorComfort"
+						th:if="${#fields.hasErrors('comfort')}" th:errors="*{comfort}"></div>
 				</div>
+
 
 				<!-- Adults and Children -->
 				<div class="form-row">
 					<div class="form-group">
-						<label for="Adults">Adults</label> <select name="Adults"
+						<label for="Adults">Adults</label> <select name="adult"
 							id="Adults">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
+
+							<option th:selected="${bookingForm.adult==1}">1</option>
+							<option th:selected="${bookingForm.adult==2}">2</option>
+							<option th:selected="${bookingForm.adult==3}">3</option>
+							<option th:selected="${bookingForm.adult==4}">4</option>
 						</select>
-						<div class="error-message" id="errorAdults"></div>
+						<div class="error-message" id="errorAdults"
+							th:if="${#fields.hasErrors('adult')}" th:errors="*{adult}"></div>
 						<!-- Space for error message -->
 					</div>
 					<div class="form-group">
-						<label for="Children">Children</label> <select name="Children"
+						<label for="Children">Children</label> <select name="children"
 							id="Children">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
+							<option th:selected="${bookingForm.children==0}">0</option>
+							<option th:selected="${bookingForm.children==1}">1</option>
+							<option th:selected="${bookingForm.children==2}">2</option>
+							<option th:selected="${bookingForm.children==3}">3</option>
 						</select>
-						<div class="error-message" id="errorChildren"></div>
+						<div class="error-message" id="errorChildren"
+							th:if="${#fields.hasErrors('children')}" th:errors="*{children}"></div>
 						<!-- Space for error message -->
 					</div>
+					<!-- Space for error message -->
 				</div>
 
 				<!-- Message -->
 				<div class="form-group">
 					<label for="Message">Message</label>
-					<textarea name="Message" id="Message" placeholder="Your message"
+					<textarea name="message" th:text="${bookingForm.message}"
+						id="Message" placeholder="Your message"
 						data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
-					<div class="error-message" id="errorMessage"></div>
+					<div class="error-message" id="errorMessage"
+						th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></div>
 					<!-- Space for error message -->
 				</div>
 
 				<!-- Submit Button -->
 				<div class="form-submit">
-					<a href="#" class="btn" data-type="submit">Submit</a>
+					<button class="btn" data-type="submit">Submit</button>
 				</div>
 			</form>
 		</div>

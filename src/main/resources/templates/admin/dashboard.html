@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>ADMIN DASHBOARD</title>
+<style>
+/* Reset & Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	background: linear-gradient(135deg, #111, #e74c3c);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 20px;
+	color: white;
+	position: relative; /* Positioning context for the logout button */
+}
+
+h1 {
+	margin-bottom: 40px;
+	font-size: 40px;
+	color: #e74c3c;
+	text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for Dashboard Links */
+.dashboard-links {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 300px;
+	margin-bottom: 30px;
+}
+
+.dashboard-links a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	background: #2c2c2c;
+	padding: 15px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid transparent;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	transition: 0.3s ease;
+}
+
+.dashboard-links a:hover {
+	background: #e74c3c;
+	color: #000;
+	border-color: #fff;
+	transform: scale(1.05);
+	box-shadow: 0 8px 18px rgba(231, 76, 60, 0.6);
+}
+
+/* Small Logout Button in Bottom-Right */
+.logout-btn {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	background: #c0392b;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+	background: #e74c3c;
+	transform: scale(1.05);
+	box-shadow: 0 8px 16px rgba(231, 76, 60, 0.6);
+}
+</style>
+</head>
+<body>
+
+	<h1>ADMIN DASHBOARD</h1>
+
+	<div class="dashboard-links">
+		<a href="/admin/readallcontacts">READ ALL CONTACTS</a>
+		<a href="/admin/readallbookings">READ ALL BOOKINGS</a>
+		<a href="/admin/changecredentials">CHANGE CREDENTIALS</a> <a href="/home">HOME</a>
+	</div>
+
+	<!-- Small Logout Button positioned at bottom-right -->
+	<a href="/dologout">
+		<button class="logout-btn">LOGOUT</button>
+	</a>
+	
+	<h3 th:text="${message}"></h3>
+
+</body>
+</html>

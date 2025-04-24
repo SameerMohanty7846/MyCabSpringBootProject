@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #e74c3c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px 30px;
+            width: 320px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.4);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #e74c3c;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #e74c3c;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            background: #1e1e1e;
+            border: 1px solid #e74c3c;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 8px #e74c3c;
+            background: #2a2a2a;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff5147, #e74c3c);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        .error-message {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff4d4d;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .home-link:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+
+        <div th:if="${param.error}" class="error-message">
+            INVALID CREDENTIALS
+        </div>
+
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Enter Name</label>
+                <input id="username" name="username" type="text" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Enter Password</label>
+                <input id="password" name="password" type="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Home Link -->
+        <a href="/home" class="home-link">Return to Home</a>
+    </div>
+
+</body>
+</html>
